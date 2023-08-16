@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Display from './components/Display'
-import Digits from './components/digits'
-import Operations from './components/operations'
+import Digits from './components/Digits'
+import Operations from './components/Operations'
 import './App.css'
 
 function App() {
