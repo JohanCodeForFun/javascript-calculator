@@ -1,17 +1,26 @@
 type Props = {
+  currentDigits: string,
   onChangeOperations: (operation: string | null) => void,
   clearDisplay: (value: number) => void
 }
 
-export default function Operations({ onChangeOperations, clearDisplay }: Props) {
+export default function Operations({ currentDigits, onChangeOperations, clearDisplay }: Props) {
   function handleOperationsClick(operation: string) {
-
-    onChangeOperations(operation)
+    // function to look at if * is in the disaply, don't add aditional *.
+    // current implemmentation breaks the test.
+    // if (
+    //   currentDigits.charAt(currentDigits.length - 1) === "*" ||
+    //   currentDigits.charAt(currentDigits.length - 1) === "/" ||
+    //   currentDigits.charAt(currentDigits.length - 1) === "+" ||
+    //   currentDigits.charAt(currentDigits.length - 1) === "-"
+    //   ) {
+    //   onChangeOperations('' + currentDigits.slice(0, currentDigits.length - 1) + operation)
+    // } else {
+    //   onChangeOperations('' + currentDigits + operation)
+    // }
     
-    console.log(operation)
     if (operation === "clear") {
       clearDisplay(0)
-      onChangeOperations(null)
     }
   }
 

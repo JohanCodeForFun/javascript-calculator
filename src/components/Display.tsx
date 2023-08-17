@@ -1,6 +1,6 @@
 type Props = {
   display: number,
-  showOperation: string
+  showOperation: string | null
 }
 
 export default function display({ display, showOperation }: Props) {

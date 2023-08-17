@@ -22,9 +22,10 @@ function App() {
           <Digits
             currentDigits={display}
             onChangeDigits={setDisplay}
-          />
+            />
           <Operations
-            onChangeOperations={setOperation}
+            currentDigits={display}
+            onChangeOperations={setDisplay}
             clearDisplay={setDisplay}
           />
         </div>
