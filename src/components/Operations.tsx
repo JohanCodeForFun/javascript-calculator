@@ -1,6 +1,9 @@
 export default function Operations() {
   function handleOperationsClick(operation) {
     console.log(operation)
+    if (operation === "clear") {
+      console.log('ALL CLEAR')
+    }
   }
 
   return (

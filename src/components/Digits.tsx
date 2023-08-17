@@ -2,9 +2,9 @@
 //   setDisplay: number | string
 // }
 
-export default function Digits() {
+export default function Digits({ currentDigits, onChangeDigits }) {
   function handleDigitsClick(digit) {
-    console.log(digit)
+    onChangeDigits(digit)
   }
 
   return (

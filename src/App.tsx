@@ -6,7 +6,9 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [display, setDisplay] = useState(12345);
+  const [display, setDisplay] = useState(0);
+  const [digits, setDigits] = useState(12345);
+  const [operation, setOperation] = useState(null);
 
   return (
     <>
@@ -14,8 +16,11 @@ function App() {
       <div className="calculator-body">
         <div className="calculator-grid">
           <Display display={display} />
-          <Digits />
-          <Operations />
+          <Digits
+            onChangeDigits={setDisplay}
+            currentDigits={display}
+          />
+          <Operations onChangeOperations={setOperation} />
           <div className="card">
             <button onClick={() => setCount((count) => count + 1)}>
               count is {count}
