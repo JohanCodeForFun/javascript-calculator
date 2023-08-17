@@ -15,17 +15,18 @@ function App() {
       <h1>JavaScript Calculator</h1>
       <div className="calculator-body">
         <div className="calculator-grid">
-          <Display display={display} />
-          <Digits
-            onChangeDigits={setDisplay}
-            currentDigits={display}
+          <Display
+            display={display}
+            showOperation={operation}
           />
-          <Operations onChangeOperations={setOperation} />
-          <div className="card">
-            <button onClick={() => setCount((count) => count + 1)}>
-              count is {count}
-            </button>
-          </div>
+          <Digits
+            currentDigits={display}
+            onChangeDigits={setDisplay}
+          />
+          <Operations
+            onChangeOperations={setOperation}
+            clearDisplay={setDisplay}
+          />
         </div>
       </div>
     </>
