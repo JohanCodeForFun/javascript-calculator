@@ -28,14 +28,22 @@ body {
   margin: 0;
 }
 
-.calculator-grid {
+/* .calculator-grid {
   display: grid;
   justify-content: center;
   align-content: center;
-  min-height: 100vh;
+  grid-template-areas:
+  "display display display display"
+  "ac ac ac div"
+  "one two three mul"
+  "four five six add"
+  "seven eight nine sub"
+  "decimal zero equals equals";
+
   grid-template-columns: repeat(4, 100px);
-  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
-}
+  grid-template-rows: minmax(120px, auto) repeat(6, 100px);
+} */
+
 
 .calculator-grid > button {
   cursor: pointer;
@@ -48,12 +56,30 @@ body {
   border-radius: 6px;
 }
 
-.calculator-grid > .btn-ac {background-color: var(--btn-mul-color);}
-.calculator-grid > .btn-div {background-color: var(--btn-div-color);}
-.calculator-grid > .btn-mul {background-color: var(--btn-mul-color);}
-.calculator-grid > .btn-add {background-color: var(--btn-add-color);}
-.calculator-grid > .btn-sub {background-color: var(--btn-sub-color);}
-.calculator-grid > .btn-equal {background-color: var(--btn-equal-color);}
+.calculator-grid > .btn-ac {
+  background-color: var(--btn-mul-color);
+  grid-area: "ac";
+}
+.calculator-grid > .btn-div {
+  background-color: var(--btn-div-color);
+  grid-area: 'div';
+}
+.calculator-grid > .btn-mul {
+  background-color: var(--btn-mul-color);
+  grid-area: 'mul';
+}
+.calculator-grid > .btn-add {
+  background-color: var(--btn-add-color);
+  grid-area: 'add';
+}
+.calculator-grid > .btn-sub {
+  background-color: var(--btn-sub-color);
+  grid-area: 'sub';
+}
+.calculator-grid > .btn-equal {
+  background-color: var(--btn-equal-color);
+  grid-area: 'equals';
+}
 
 .calculator-grid > .btn-div,
 .calculator-grid > .btn-mul,
@@ -95,3 +121,243 @@ body {
   color: white;
   font-size: 2.5rem;
 }
+
+
+.calculator-grid > #display {
+  grid-area: "display";
+}
+
+.calculator-grid > #one {
+  grid-area: "one";
+}
+.calculator-grid > #two {
+  grid-area: "two";
+}
+.calculator-grid > #three {
+  grid-area: "three";
+}
+.calculator-grid > #four {
+  grid-area: "four";
+}
+.calculator-grid > #five {
+  grid-area: "five";
+}
+.calculator-grid > #six {
+  grid-area: "six";
+}
+.calculator-grid > #seven {
+  grid-area: "seven";
+}
+.calculator-grid > #eight {
+  grid-area: "eight";
+}
+.calculator-grid > #nine {
+  grid-area: "nine";
+}
+.calculator-grid > #clear {
+  grid-area: "clear";
+}
+.calculator-grid > #equals {
+  grid-area: "equal";
+}
+.calculator-grid > #add {
+  grid-area: "add";
+}
+.calculator-grid > #sub {
+  grid-area: "sub";
+}
+.calculator-grid > #mul {
+  grid-area: "mul";
+}
+.calculator-grid > #div {
+  grid-area: "div";
+}
+
+
+/* <style> */
+.calculator-grid {
+   display: grid; 
+   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   
+   gap: 0px;
+   height: 100%;
+   
+}
+  
+#display {
+   grid-row-start: 1;
+   grid-column-start: 1;
+
+   grid-row-end: 2;
+   grid-column-end: 5;
+   
+}
+#clear {
+   grid-row-start: 2;
+   grid-column-start: 1;
+
+   grid-row-end: 3;
+   grid-column-end: 3;
+   
+}
+#delete {
+   grid-row-start: 2;
+   grid-column-start: 3;
+
+   grid-row-end: 3;
+   grid-column-end: 4;
+   
+}
+#div {
+   grid-row-start: 2;
+   grid-column-start: 4;
+
+   grid-row-end: 3;
+   grid-column-end: 5;
+   
+}
+#one {
+   grid-row-start: 3;
+   grid-column-start: 1;
+
+   grid-row-end: 4;
+   grid-column-end: 2;
+   
+}
+#two {
+   grid-row-start: 3;
+   grid-column-start: 2;
+
+   grid-row-end: 4;
+   grid-column-end: 3;
+   
+}
+#three {
+   grid-row-start: 3;
+   grid-column-start: 3;
+
+   grid-row-end: 4;
+   grid-column-end: 4;
+   
+}
+#mul {
+   grid-row-start: 3;
+   grid-column-start: 4;
+
+   grid-row-end: 4;
+   grid-column-end: 5;
+   
+}
+#four {
+   grid-row-start: 4;
+   grid-column-start: 1;
+
+   grid-row-end: 5;
+   grid-column-end: 2;
+   
+}
+#five {
+   grid-row-start: 4;
+   grid-column-start: 2;
+
+   grid-row-end: 5;
+   grid-column-end: 3;
+   
+}
+#six {
+   grid-row-start: 4;
+   grid-column-start: 3;
+
+   grid-row-end: 5;
+   grid-column-end: 4;
+   
+}
+#add {
+   grid-row-start: 4;
+   grid-column-start: 4;
+
+   grid-row-end: 5;
+   grid-column-end: 5;
+   
+}
+#seven {
+   grid-row-start: 5;
+   grid-column-start: 1;
+
+   grid-row-end: 6;
+   grid-column-end: 2;
+   
+}
+#eight {
+   grid-row-start: 5;
+   grid-column-start: 2;
+
+   grid-row-end: 6;
+   grid-column-end: 3;
+   
+}
+#nine {
+   grid-row-start: 5;
+   grid-column-start: 3;
+
+   grid-row-end: 6;
+   grid-column-end: 4;
+   
+}
+#sub {
+   grid-row-start: 5;
+   grid-column-start: 4;
+
+   grid-row-end: 6;
+   grid-column-end: 5;
+   
+}
+#decimal {
+   grid-row-start: 6;
+   grid-column-start: 1;
+
+   grid-row-end: 7;
+   grid-column-end: 2;
+   
+}
+#zero {
+   grid-row-start: 6;
+   grid-column-start: 2;
+
+   grid-row-end: 7;
+   grid-column-end: 3;
+   
+}
+#equals {
+   grid-row-start: 6;
+   grid-column-start: 3;
+
+   grid-row-end: 7;
+   grid-column-end: 5;
+   
+}
+/* </style>
+
+<div class="angry-grid">
+  <div id="item-0">&nbsp;</div>
+  <div id="item-1">&nbsp;</div>
+  <div id="item-2">&nbsp;</div>
+  <div id="item-3">&nbsp;</div>
+  <div id="item-4">&nbsp;</div>
+  <div id="item-5">&nbsp;</div>
+  <div id="item-6">&nbsp;</div>
+  <div id="item-7">&nbsp;</div>
+  <div id="item-8">&nbsp;</div>
+  <div id="item-9">&nbsp;</div>
+  <div id="item-10">&nbsp;</div>
+  <div id="item-11">&nbsp;</div>
+  <div id="item-12">&nbsp;</div>
+  <div id="item-13">&nbsp;</div>
+  <div id="item-14">&nbsp;</div>
+  <div id="item-15">&nbsp;</div>
+  <div id="item-16">&nbsp;</div>
+  <div id="item-17">&nbsp;</div>
+  <div id="item-18">&nbsp;</div>
+</div>
+ */
