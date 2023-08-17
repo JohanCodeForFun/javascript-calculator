@@ -1,10 +1,15 @@
-// type Props = {
-//   setDisplay: number | string
-// }
+type Props = {
+  currentDigits: number | string,
+  onChangeDigits: (digit: number | string) => void
+}
 
-export default function Digits({ currentDigits, onChangeDigits }) {
-  function handleDigitsClick(digit) {
-    onChangeDigits(digit)
+export default function Digits({ currentDigits, onChangeDigits }: Props) {
+  function handleDigitsClick(digit: number | string) {
+    if (currentDigits === 0) {
+      onChangeDigits(digit)
+    } else {
+      onChangeDigits('' + currentDigits + digit)
+    }
   }
 
   return (
