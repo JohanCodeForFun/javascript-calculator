@@ -1,5 +1,10 @@
-export default function Operations({ onChangeOperations, clearDisplay }) {
-  function handleOperationsClick(operation) {
+type Props = {
+  onChangeOperations: (operation: string | null) => void,
+  clearDisplay: (value: number) => void
+}
+
+export default function Operations({ onChangeOperations, clearDisplay }: Props) {
+  function handleOperationsClick(operation: string) {
 
     onChangeOperations(operation)
     
