@@ -1,17 +1,25 @@
+// type Props = {
+//   setDisplay: number | string
+// }
+
 export default function Digits() {
+  function handleDigitsClick(digit) {
+    console.log(digit)
+  }
+
   return (
     <>
-      <button id="zero" value={0}>0</button>
-      <button id="one" value={1}>1</button>
-      <button id="two" value={2}>2</button>
-      <button id="three" value={3}>3</button>
-      <button id="four" value={4}>4</button>
-      <button id="five" value={5}>5</button>
-      <button id="six" value={6}>6</button>
-      <button id="seven" value={7}>7</button>
-      <button id="eight" value={8}>8</button>
-      <button id="nine" value={9}>9</button>
-      <button id="decimal" value=".">.</button>
+      <button id="zero" onClick={() => handleDigitsClick(0)}>0</button>
+      <button id="one" onClick={() => handleDigitsClick(1)}>1</button>
+      <button id="two" onClick={() => handleDigitsClick(2)}>2</button>
+      <button id="three" onClick={() => handleDigitsClick(3)}>3</button>
+      <button id="four" onClick={() => handleDigitsClick(4)}>4</button>
+      <button id="five" onClick={() => handleDigitsClick(5)}>5</button>
+      <button id="six" onClick={() => handleDigitsClick(6)}>6</button>
+      <button id="seven" onClick={() => handleDigitsClick(7)}>7</button>
+      <button id="eight" onClick={() => handleDigitsClick(8)}>8</button>
+      <button id="nine" onClick={() => handleDigitsClick(9)}>9</button>
+      <button id="decimal" onClick={() => handleDigitsClick(".")}>.</button>
     </>
   )
 }
