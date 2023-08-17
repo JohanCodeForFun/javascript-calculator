@@ -1,8 +1,12 @@
-export default function Operations() {
+export default function Operations({ onChangeOperations, clearDisplay }) {
   function handleOperationsClick(operation) {
+
+    onChangeOperations(operation)
+    
     console.log(operation)
     if (operation === "clear") {
-      console.log('ALL CLEAR')
+      clearDisplay(0)
+      onChangeOperations(null)
     }
   }
 

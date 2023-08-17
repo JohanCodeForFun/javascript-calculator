@@ -1,13 +1,14 @@
 type Props = {
-  display: number
+  display: number,
+  operation: string
 }
 
-export default function display({ display }: Props) {
+export default function display({ display, showOperation }: Props) {
   return (
     <>
       <div id="display" className="output">
         <div className="current-operand">
-          { display }
+          { display } { showOperation }
         </div>
       </div>
     </>
